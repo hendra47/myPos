@@ -48,31 +48,31 @@
     </div>
   </div>
 
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="logo" class="col-md-2 control-label">Logo Perusahaan</label>
     <div class="col-md-4">
       <input id="logo" type="file" class="form-control" name="logo">
       <br><div class="tampil-logo"></div>
     </div>
-  </div>
+  </div> -->
 
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="kartu_member" class="col-md-2 control-label">Desain Kartu Member</label>
     <div class="col-md-4">
       <input id="kartu_member" type="file" class="form-control" name="kartu_member">
       <br><div class="tampil-kartu"></div>
     </div>
-  </div>
+  </div> -->
 
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="diskon_member" class="col-md-2 control-label">Diskon Member (%)</label>
     <div class="col-md-2">
       <input id="diskon_member" type="number" class="form-control" name="diskon_member"  required>
       <span class="help-block with-errors"></span>
     </div>
-  </div>
+  </div> -->
 
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="tipe_nota" class="col-md-2 control-label">Tipe Nota</label>
     <div class="col-md-2">
       <select id="tipe_nota" class="form-control" name="tipe_nota">
@@ -80,7 +80,7 @@
         <option value="1">Nota Besar (PDF)</option>
       </select>
     </div>
-  </div>
+  </div> -->
 
   </div>
   <div class="box-footer">

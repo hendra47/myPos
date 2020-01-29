@@ -70,8 +70,8 @@
           <input type="text" class="form-control" id="totalrp" readonly>
         </div>
       </div>
-
-      <div class="form-group">
+      <input id="member" type="hidden" class="form-control" name="member" value="0">
+      <!-- <div class="form-group">
         <label for="member" class="col-md-4 control-label">Kode Member</label>
         <div class="col-md-8">
           <div class="input-group">
@@ -81,7 +81,7 @@
             </span>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="form-group">
         <label for="diskon" class="col-md-4 control-label">Diskon</label>
