@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>POS</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -82,33 +82,52 @@
 
             <section class="sidebar">
                 <ul class="sidebar-menu">
-                    <li class="header">MENU NAVIGASI</li>
-
+                    <li class="header">MENU</li>
                     <li><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                    <li class="active treeview menu-open">
+                        <a href="#">
+                            <i class="fa fa-folder"></i> <span>Master Data</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{ route('kategori.index') }}"><i class="fa fa-circle-o"></i>
+                                    <span>Kategori</span></a></li>
+                            <li><a href="{{ route('produk.index') }}"><i class="fa fa-circle-o"></i>
+                                    <span>Produk</span></a></li>
+                            <li><a href="{{ route('supplier.index') }}"><i class="fa fa-circle-o"></i>
+                                    <span>Supplier</span></a></li>
+                            <li><a href="{{ route('user.index') }}""><i class=" fa fa-circle-o"></i>
+                                    <span>User</span></a>
+                            </li>
 
-                    <!-- @if( Auth::user()->level == 1 ) -->
-                    <li><a href="{{ route('kategori.index') }}"><i class="fa fa-cube"></i> <span>Kategori</span></a>
+                        </ul>
                     </li>
-                    <li><a href="{{ route('produk.index') }}"><i class="fa fa-cubes"></i> <span>Produk</span></a></li>
-                    <!-- <li><a href="{{ route('member.index') }}"><i class="fa fa-credit-card"></i> <span>Member</span></a></li> -->
-                    <li><a href="{{ route('supplier.index') }}"><i class="fa fa-truck"></i> <span>Supplier</span></a>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-folder"></i>
+                            <span>Transaksi</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{ route('transaksi.new') }}"><i class="fa fa-circle-o"></i>
+                                    <span>Penjualan</span></a></li>
+                            <li><a href="{{ route('penjualan.index') }}"><i class="fa fa-circle-o"></i>
+                                    <span>Daftar Penjualan</span></a>
+                            </li>
+                            <li><a href="{{ route('pembelian.index') }}"><i class="fa fa-circle-o"></i>
+                                    <span>Pembelian</span></a></li>
+                            <li><a href="{{ route('pengeluaran.index') }}"><i class="fa fa-circle-o"></i>
+                                    <span>Pengeluaran</span></a></li>
+
+                        </ul>
                     </li>
-                    <li><a href="{{ route('pengeluaran.index') }}"><i class="fa fa-money"></i>
-                            <span>Pengeluaran</span></a></li>
-                    <li><a href="{{ route('user.index') }}""><i class=" fa fa-user"></i> <span>User</span></a></li>
-                    <li><a href="{{ route('penjualan.index') }}"><i class="fa fa-upload"></i> <span>Penjualan</span></a>
-                    </li>
-                    <li><a href="{{ route('pembelian.index') }}"><i class="fa fa-download"></i>
-                            <span>Pembelian</span></a></li>
-                    <li><a href="{{ route('transaksi.new') }}"><i class="fa fa-cart-plus"></i>
-                            <span>Transaksi</span></a></li>
                     <li><a href="{{ route('laporan.index') }}"><i class="fa fa-file-pdf-o"></i> <span>Laporan</span></a>
                     </li>
-                    <!-- <li><a href="{{ route('setting.index') }}"><i class="fa fa-gears"></i> <span>Setting</span></a></li> -->
-                    <!-- @else
-        <li><a href="{{ route('transaksi.index') }}"><i class="fa fa-shopping-cart"></i> <span>Transaksi</span></a></li>
-        <li><a href="{{ route('transaksi.new') }}"><i class="fa fa-cart-plus"></i> <span>Transaksi Baru</span></a></li>
-      @endif -->
+
                 </ul>
             </section>
         </aside>

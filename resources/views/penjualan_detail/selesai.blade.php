@@ -19,19 +19,6 @@
             <i class="icon fa fa-check"></i>
             Data Transaksi telah disimpan.
           </div>
-
-          <br><br>
-          @if($setting->tipe_nota==0)
-            <a class="btn btn-warning btn-lg" href="{{ route('transaksi.cetak') }}">Cetak Ulang Nota</a>
-          @else
-            <a class="btn btn-warning btn-lg" onclick="tampilNota()">Cetak Ulang Nota</a>
-            <script type="text/javascript">
-              tampilNota();
-              function tampilNota(){
-                window.open("{{ route('transaksi.pdf') }}", "Nota PDF", "height=650,width=1024,left=150,scrollbars=yes");
-              }              
-            </script>
-          @endif
           <a class="btn btn-primary btn-lg" href="{{ route('transaksi.new') }}">Transaksi Baru</a>
           <br><br><br><br>
       </div>
