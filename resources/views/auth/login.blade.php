@@ -24,8 +24,7 @@
     <p class="login-box-msg">Login untuk menggunakan aplikasi</p>
 
     <form action="{{ route('login') }}" method="post">
-    {{ csrf_field() }}
-
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <div class="form-group has-feedback">
         <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
