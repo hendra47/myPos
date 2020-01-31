@@ -11,7 +11,7 @@
  Target Server Version : 50729
  File Encoding         : 65001
 
- Date: 29/01/2020 23:05:50
+ Date: 31/01/2020 18:39:06
 */
 
 SET NAMES utf8mb4;
@@ -68,7 +68,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of migrations
@@ -86,6 +86,7 @@ INSERT INTO `migrations` VALUES (9, '2018_05_07_050535_buat_tabel_penjualan', 1)
 INSERT INTO `migrations` VALUES (10, '2018_05_07_050546_buat_tabel_penjualan_detail', 1);
 INSERT INTO `migrations` VALUES (11, '2018_05_07_050559_buat_tabel_pengeluaran', 1);
 INSERT INTO `migrations` VALUES (12, '2018_05_07_050611_buat_tabel_setting', 1);
+INSERT INTO `migrations` VALUES (13, '2020_01_29_173246_create_sessions_table', 2);
 COMMIT;
 
 -- ----------------------------
@@ -182,7 +183,7 @@ CREATE TABLE `penjualan` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_penjualan`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of penjualan
@@ -196,6 +197,7 @@ INSERT INTO `penjualan` VALUES (8, 0, 1, 1300000, 0, 1300000, 1300000, 1, '2020-
 INSERT INTO `penjualan` VALUES (9, 0, 0, 0, 0, 0, 0, 1, '2020-01-29 16:02:39', '2020-01-29 16:02:39');
 INSERT INTO `penjualan` VALUES (10, 0, 0, 0, 0, 0, 0, 1, '2020-01-29 16:03:45', '2020-01-29 16:03:45');
 INSERT INTO `penjualan` VALUES (11, 0, 0, 0, 0, 0, 0, 1, '2020-01-29 16:04:33', '2020-01-29 16:04:33');
+INSERT INTO `penjualan` VALUES (12, 0, 1, 1300000, 0, 1300000, 1300000, 2, '2020-01-31 11:36:23', '2020-01-31 11:38:38');
 COMMIT;
 
 -- ----------------------------
@@ -213,7 +215,7 @@ CREATE TABLE `penjualan_detail` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_penjualan_detail`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of penjualan_detail
@@ -223,6 +225,7 @@ INSERT INTO `penjualan_detail` VALUES (1, 2, 1001001, 1300000, 1, 0, 1300000, '2
 INSERT INTO `penjualan_detail` VALUES (2, 5, 1001001, 1300000, 1, 0, 1300000, '2020-01-29 15:16:49', '2020-01-29 15:16:49');
 INSERT INTO `penjualan_detail` VALUES (3, 6, 1001001, 1300000, 1, 0, 1300000, '2020-01-29 15:17:07', '2020-01-29 15:17:07');
 INSERT INTO `penjualan_detail` VALUES (4, 8, 1001001, 1300000, 1, 0, 1300000, '2020-01-29 16:00:45', '2020-01-29 16:00:45');
+INSERT INTO `penjualan_detail` VALUES (5, 12, 1001001, 1300000, 1, 0, 1300000, '2020-01-31 11:38:30', '2020-01-31 11:38:30');
 COMMIT;
 
 -- ----------------------------
@@ -248,8 +251,29 @@ CREATE TABLE `produk` (
 -- Records of produk
 -- ----------------------------
 BEGIN;
-INSERT INTO `produk` VALUES (1, 1001001, 1, 'BRUSHED SILVER  18\", 20\"', 'wheelspros', 1000000, 0, 1300000, 97, '2020-01-29 14:23:56', '2020-01-29 16:00:54');
+INSERT INTO `produk` VALUES (1, 1001001, 1, 'BRUSHED SILVER  18\", 20\"', 'wheelspros', 1000000, 0, 1300000, 96, '2020-01-29 14:23:56', '2020-01-31 11:38:38');
 INSERT INTO `produk` VALUES (2, 1001002, 1, 'GLOSS BLACK  18\", 20\"', 'wheelspros', 2000000, 0, 2400000, 10, '2020-01-29 14:25:05', '2020-01-29 14:25:05');
+COMMIT;
+
+-- ----------------------------
+-- Table structure for sessions
+-- ----------------------------
+DROP TABLE IF EXISTS `sessions`;
+CREATE TABLE `sessions` (
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` int(10) unsigned DEFAULT NULL,
+  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` text COLLATE utf8mb4_unicode_ci,
+  `payload` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_activity` int(11) NOT NULL,
+  UNIQUE KEY `sessions_id_unique` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------
+-- Records of sessions
+-- ----------------------------
+BEGIN;
+INSERT INTO `sessions` VALUES ('jsl642HThl8LAUPuSWg0b3TDvR2rvH7FC9I2sGwh', NULL, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36', 'YTo0OntzOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjY6Il90b2tlbiI7czo0MDoiNEFZQlhLdHFqVXVqeUM4bWZ6bjBjVkpRR3daMFFEZEpZWkZEVkc4SyI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czoyMToiaHR0cDovL2xvY2FsaG9zdDo4MDAwIjt9czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9sb2dpbiI7fX0=', 1580464677);
 COMMIT;
 
 -- ----------------------------
@@ -320,8 +344,8 @@ CREATE TABLE `users` (
 -- Records of users
 -- ----------------------------
 BEGIN;
-INSERT INTO `users` VALUES (1, 'Admin', 'admin@gmail.com', '$2y$10$4kwsVf1x1KHu780MxQ/wZuwIvFYP9TRCZR09FsyYrOfcD/gFhDpWe', 'fotouser_1.jpg', 1, 'uk2evROLuvapNUU9QXQl6KryYxU14wLs7FJE0lWO7EsrQH0JOAafHsbmZz1P', NULL, '2020-01-29 14:54:03');
-INSERT INTO `users` VALUES (2, 'staff', 'staff@gmail.com', '$2y$10$IROrOmTibgDsyqg10OR2H.dWCwVO9.qjBe3uC9YxmNu6z0u4KPOpe', 'user.png', 2, '2gkBWzl52tFqDuLmhY6jjWE6TKsEj3LIVDCuIJrcWylhUQ1EOgDVA1o78iRt', NULL, NULL);
+INSERT INTO `users` VALUES (1, 'Pemilik', 'pemilik@gmail.com', '$2y$10$4kwsVf1x1KHu780MxQ/wZuwIvFYP9TRCZR09FsyYrOfcD/gFhDpWe', 'fotouser_1.jpg', 1, 'rFY2I9xkx4TkypciIyIcr2vtDvYCAJu8ttNPh134iVKX72riExs7sJ0WCLzn', NULL, '2020-01-29 14:54:03');
+INSERT INTO `users` VALUES (2, 'kasir', 'kasir@gmail.com', '$2y$10$IROrOmTibgDsyqg10OR2H.dWCwVO9.qjBe3uC9YxmNu6z0u4KPOpe', 'user.png', 2, '2gkBWzl52tFqDuLmhY6jjWE6TKsEj3LIVDCuIJrcWylhUQ1EOgDVA1o78iRt', NULL, NULL);
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

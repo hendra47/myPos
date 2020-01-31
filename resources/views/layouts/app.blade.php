@@ -92,18 +92,24 @@
                             </span>
                         </a>
                         <ul class="treeview-menu">
+                            @if( Auth::user()->level == 2 )
                             <li><a href="{{ route('kategori.index') }}"><i class="fa fa-circle-o"></i>
                                     <span>Kategori</span></a></li>
                             <li><a href="{{ route('produk.index') }}"><i class="fa fa-circle-o"></i>
                                     <span>Produk</span></a></li>
                             <li><a href="{{ route('supplier.index') }}"><i class="fa fa-circle-o"></i>
                                     <span>Supplier</span></a></li>
+                            @endif
+                            @if( Auth::user()->level == 1 )
                             <li><a href="{{ route('user.index') }}""><i class=" fa fa-circle-o"></i>
                                     <span>User</span></a>
                             </li>
+                            @endif
 
                         </ul>
                     </li>
+
+                    @if( Auth::user()->level == 2 )
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-folder"></i>
@@ -125,8 +131,10 @@
 
                         </ul>
                     </li>
-                    <li><a href="{{ route('laporan.index') }}"><i class="fa fa-file-pdf-o"></i> <span>Laporan</span></a>
-                    </li>
+                    @endif
+                    @if( Auth::user()->level == 1 )
+                    <li><a href="{{ route('laporan.index') }}"><i class="fa fa-file-pdf-o"></i> <span>Laporan</span></a></li>
+                    @endif
 
                 </ul>
             </section>

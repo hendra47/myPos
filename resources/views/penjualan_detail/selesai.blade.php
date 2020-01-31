@@ -19,7 +19,10 @@
             <i class="icon fa fa-check"></i>
             Data Transaksi telah disimpan.
           </div>
+          <div style="display:flex;flex-direction:row">
           <a class="btn btn-primary btn-lg" href="{{ route('transaksi.new') }}">Transaksi Baru</a>
+          <a style="margin-left:10px;" class="btn btn-warning btn-lg" href="#') }}">Print</a>
+          </div>
           <br><br><br><br>
       </div>
    </div>
