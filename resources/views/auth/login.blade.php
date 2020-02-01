@@ -17,7 +17,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <img src="{{ asset('images/logo.png') }}" width="200">
+    <h1>ASHAR WHEELS</h1>
   </div>
 
   <div class="login-box-body">

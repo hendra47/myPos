@@ -28,7 +28,7 @@ Route::group(['middleware' => 'web'], function(){
    Route::resource('transaksi', 'PenjualanDetailController');
 });
 
-Route::group(['middleware' => ['web', 'cekuser:1' ]], function(){
+// Route::group(['middleware' => ['web', 'cekuser:1' ]], function(){
    Route::get('kategori/data', 'KategoriController@listData')->name('kategori.data');
    Route::resource('kategori', 'KategoriController');
 
@@ -70,5 +70,5 @@ Route::group(['middleware' => ['web', 'cekuser:1' ]], function(){
    Route::get('laporan/pdf/{awal}/{akhir}', 'LaporanController@exportPDF');
 
    Route::resource('setting', 'SettingController');
-});
+// });
 
