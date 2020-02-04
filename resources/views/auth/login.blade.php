@@ -14,13 +14,13 @@
   <link rel="stylesheet" href="{{ asset('adminLTE/plugins/iCheck/square/blue.css') }}">
 </head>
 
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-color:#FFF;">
 <div class="login-box">
   <div class="login-logo">
-    <h1>ASHAR WHEELS</h1>
+    <img src="{{ asset('images/logo.png') }}" style="height:120px;">
   </div>
 
-  <div class="login-box-body">
+  <div class="login-box-body" style="border:1px solid #ddd; border-radius:5px;">
     <p class="login-box-msg">Login untuk menggunakan aplikasi</p>
 
     <form action="{{ route('login') }}" method="post">

@@ -44,7 +44,7 @@
         	</div>
         </div>
     </div>
-    <div class="col-lg-3 col-xs-6">
+    <!-- <div class="col-lg-3 col-xs-6">
         <div class="small-box bg-red">
             <div class="inner">
             	<h3>{{ $member }}</h3>
@@ -54,7 +54,7 @@
             	<i class="fa fa-credit-card"></i>
         	</div>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <div class="row">
