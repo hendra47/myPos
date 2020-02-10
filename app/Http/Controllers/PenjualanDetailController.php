@@ -225,13 +225,15 @@ class PenjualanDetailController extends Controller
      $detail = PenjualanDetail::leftJoin('produk', 'produk.kode_produk', '=', 'penjualan_detail.kode_produk')
         ->where('id_penjualan', '=', session('idpenjualan'))
         ->get();
-
       $penjualan = Penjualan::find(session('idpenjualan'));
       $setting = Setting::find(1);
       $no = 0;
      
-     $pdf = PDF::loadView('penjualan_detail.notapdf', compact('detail', 'penjualan', 'setting', 'no'));
-     $pdf->setPaper(array(0,0,550,440), 'potrait');      
-      return $pdf->stream();
+    //  $pdf = PDF::loadView('penjualan_detail.notapdf', compact('detail', 'penjualan', 'setting', 'no'));
+    //  $pdf->setPaper(array(0,0,550,440), 'potrait');      
+    //   return $pdf->stream();
+    return view('penjualan_detail.notapdf', compact('detail', 'penjualan', 'setting', 'no'));
+
+
    }
 }

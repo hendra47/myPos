@@ -19,16 +19,16 @@
 
 <table width="100%">
   <tr>
-     <td rowspan="3" width="60%"><img src="../public/images/{{$setting->logo}}" width="150"><br>
+     <td rowspan="3" width="60%"><img src="{{ asset('images/logo.png') }}" width="150"><br>
      {{ $setting->alamat }}<br><br>
      </td>
      <td>Tanggal</td>
      <td>: {{ tanggal_indonesia(date('Y-m-d')) }}</td>
   </tr>     
-  <tr>
+  <!-- <tr>
      <td>Kode Member</td>
      <td>: {{ $penjualan->kode_member }}</td>
-  </tr>
+  </tr> -->
 </table>
          
 <table width="100%" class="data">
