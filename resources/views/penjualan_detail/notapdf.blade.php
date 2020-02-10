@@ -81,12 +81,6 @@
 </html>
 
 
-@section('script')
 <script type="text/javascript">
-var table;
-$(function(){
    window.print();
-});
 </script>
-
-@endsection
