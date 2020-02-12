@@ -20,7 +20,8 @@
 <table width="100%">
   <tr>
      <td rowspan="3" width="60%"><img src="{{ asset('images/logo.png') }}" width="150"><br>
-     {{ $setting->alamat }}<br><br>
+     Jl. K.H. Hasyim Ashar No. 23 RT 003 RW 004, Poris Plawad Utara, Cipondoh, Tangerang, Banten - 15141
+     <br><br>
      </td>
      <td>Tanggal</td>
      <td>: {{ tanggal_indonesia(date('Y-m-d')) }}</td>
